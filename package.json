@@ -1,0 +1,23 @@
+{
+  "name": "nasa_19110355_DB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix Server",
+    "install-client": "npm install --prefix Client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run watch --prefix Server",
+    "client": "npm start --prefix Client",
+    "watch": "concurrently \"npm run server\" \"npm run client\"",
+    "deploy": "npm run build --prefix Client && npm run start --prefix Server",
+    "test": "npm run test --prefix Server && npm run test --prefix Client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.5.0",
+    "morgan": "^1.10.0"
+  }
+}
